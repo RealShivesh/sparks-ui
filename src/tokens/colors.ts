@@ -1,0 +1,184 @@
+export const colors = {
+  // Brand primitives
+  brand: {
+    50: '#eef2ff',
+    100: '#e0e7ff',
+    200: '#c7d2fe',
+    300: '#a5b4fc',
+    400: '#818cf8',
+    500: '#6366f1',
+    600: '#4f46e5',
+    700: '#4338ca',
+    800: '#3730a3',
+    900: '#312e81',
+    950: '#1e1b4b',
+  },
+
+  // Neutral
+  neutral: {
+    0: '#ffffff',
+    50: '#f8fafc',
+    100: '#f1f5f9',
+    200: '#e2e8f0',
+    300: '#cbd5e1',
+    400: '#94a3b8',
+    500: '#64748b',
+    600: '#475569',
+    700: '#334155',
+    800: '#1e293b',
+    900: '#0f172a',
+    950: '#020617',
+    1000: '#000000',
+  },
+
+  // Semantic
+  success: {
+    50: '#f0fdf4',
+    100: '#dcfce7',
+    200: '#bbf7d0',
+    300: '#86efac',
+    400: '#4ade80',
+    500: '#22c55e',
+    600: '#16a34a',
+    700: '#15803d',
+    800: '#166534',
+    900: '#14532d',
+  },
+
+  warning: {
+    50: '#fffbeb',
+    100: '#fef3c7',
+    200: '#fde68a',
+    300: '#fcd34d',
+    400: '#fbbf24',
+    500: '#f59e0b',
+    600: '#d97706',
+    700: '#b45309',
+    800: '#92400e',
+    900: '#78350f',
+  },
+
+  danger: {
+    50: '#fef2f2',
+    100: '#fee2e2',
+    200: '#fecaca',
+    300: '#fca5a5',
+    400: '#f87171',
+    500: '#ef4444',
+    600: '#dc2626',
+    700: '#b91c1c',
+    800: '#991b1b',
+    900: '#7f1d1d',
+  },
+
+  info: {
+    50: '#eff6ff',
+    100: '#dbeafe',
+    200: '#bfdbfe',
+    300: '#93c5fd',
+    400: '#60a5fa',
+    500: '#3b82f6',
+    600: '#2563eb',
+    700: '#1d4ed8',
+    800: '#1e40af',
+    900: '#1e3a8a',
+  },
+} as const;
+
+export const lightPalette = {
+  background: {
+    primary: colors.neutral[0],
+    secondary: colors.neutral[50],
+    tertiary: colors.neutral[100],
+    inverse: colors.neutral[900],
+  },
+  foreground: {
+    primary: colors.neutral[900],
+    secondary: colors.neutral[600],
+    tertiary: colors.neutral[400],
+    inverse: colors.neutral[0],
+    disabled: colors.neutral[300],
+  },
+  border: {
+    default: colors.neutral[200],
+    strong: colors.neutral[300],
+    focus: colors.brand[500],
+  },
+  brand: {
+    default: colors.brand[500],
+    hover: colors.brand[600],
+    active: colors.brand[700],
+    subtle: colors.brand[50],
+    text: colors.brand[700],
+  },
+  success: {
+    default: colors.success[500],
+    subtle: colors.success[50],
+    text: colors.success[700],
+  },
+  warning: {
+    default: colors.warning[500],
+    subtle: colors.warning[50],
+    text: colors.warning[700],
+  },
+  danger: {
+    default: colors.danger[500],
+    subtle: colors.danger[50],
+    text: colors.danger[700],
+  },
+  info: {
+    default: colors.info[500],
+    subtle: colors.info[50],
+    text: colors.info[700],
+  },
+} as const;
+
+export const darkPalette = {
+  background: {
+    primary: colors.neutral[950],
+    secondary: colors.neutral[900],
+    tertiary: colors.neutral[800],
+    inverse: colors.neutral[50],
+  },
+  foreground: {
+    primary: colors.neutral[50],
+    secondary: colors.neutral[400],
+    tertiary: colors.neutral[500],
+    inverse: colors.neutral[900],
+    disabled: colors.neutral[600],
+  },
+  border: {
+    default: colors.neutral[700],
+    strong: colors.neutral[600],
+    focus: colors.brand[400],
+  },
+  brand: {
+    default: colors.brand[400],
+    hover: colors.brand[300],
+    active: colors.brand[200],
+    subtle: colors.brand[950],
+    text: colors.brand[300],
+  },
+  success: {
+    default: colors.success[400],
+    subtle: '#0a2e18',
+    text: colors.success[400],
+  },
+  warning: {
+    default: colors.warning[400],
+    subtle: '#2e1f00',
+    text: colors.warning[400],
+  },
+  danger: {
+    default: colors.danger[400],
+    subtle: '#2e0a0a',
+    text: colors.danger[400],
+  },
+  info: {
+    default: colors.info[400],
+    subtle: '#0a1a2e',
+    text: colors.info[400],
+  },
+} as const;
+
+export type ColorPalette = typeof lightPalette;
