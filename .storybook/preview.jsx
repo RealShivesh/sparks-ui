@@ -1,8 +1,7 @@
 import React from 'react';
-import type { Preview } from '@storybook/react';
-import { ThemeProvider } from '../src/theme/ThemeProvider';
+import { ThemeProvider } from '../src/theme/ThemeProvider.jsx';
 
-const preview: Preview = {
+const preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -30,8 +29,7 @@ const preview: Preview = {
           'div',
           {
             style: {
-              fontFamily:
-                '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
               padding: '16px',
             },
           },

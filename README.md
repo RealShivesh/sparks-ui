@@ -1,13 +1,13 @@
 # sparks-ui
 
-A React + TypeScript UI component library with design tokens, full theming (light/dark + custom), and accessibility built-in.
+A React UI component library (plain JavaScript) with design tokens, full theming (light/dark + custom), and accessibility built-in.
 
 ## Features
 
 - ⚡ **Tree-shakable** — import only what you use
 - 🎨 **Theming** — light/dark modes + fully customisable via `ThemeProvider`
 - ♿ **Accessible** — ARIA attributes and keyboard navigation throughout
-- 🔷 **TypeScript-first** — complete type declarations
+- 🟨 **Plain JavaScript** — no TypeScript, no type declarations required
 - 📖 **Storybook** — interactive component previews
 - 🪄 **Zero CSS files** — all styling via inline styles, fully self-contained
 

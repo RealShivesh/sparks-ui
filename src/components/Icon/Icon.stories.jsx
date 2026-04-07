@@ -1,48 +1,25 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Icon } from './Icon';
-import { iconMap } from '../../icons';
+import { Icon } from './Icon.jsx';
+import { iconMap } from '../../icons/index.jsx';
 
-const meta: Meta<typeof Icon> = {
+export default {
   title: 'Components/Icon',
   component: Icon,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
-    name: {
-      control: 'select',
-      options: Object.keys(iconMap),
-    },
+    name: { control: 'select', options: Object.keys(iconMap) },
     size: { control: 'number' },
     color: { control: 'color' },
   },
 };
 
-export default meta;
-type Story = StoryObj<typeof Icon>;
+export const Default = { args: { name: 'check', size: 24 } };
 
-export const Default: Story = {
-  args: {
-    name: 'check',
-    size: 24,
-  },
-};
-
-export const AllIcons: Story = {
+export const AllIcons = {
   render: () => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', padding: '16px' }}>
-      {(Object.keys(iconMap) as Array<keyof typeof iconMap>).map((name) => (
-        <div
-          key={name}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '8px',
-            minWidth: '80px',
-          }}
-        >
+      {Object.keys(iconMap).map((name) => (
+        <div key={name} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', minWidth: '80px' }}>
           <Icon name={name} size={24} aria-label={name} />
           <span style={{ fontSize: '11px', color: '#64748b', textAlign: 'center' }}>{name}</span>
         </div>
@@ -51,7 +28,7 @@ export const AllIcons: Story = {
   ),
 };
 
-export const Sizes: Story = {
+export const Sizes = {
   render: () => (
     <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
       <Icon name="search" size={12} aria-label="search small" />
@@ -63,7 +40,7 @@ export const Sizes: Story = {
   ),
 };
 
-export const Colored: Story = {
+export const Colored = {
   render: () => (
     <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
       <Icon name="check" size={24} color="#22c55e" aria-label="check green" />

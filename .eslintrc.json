@@ -1,6 +1,5 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
@@ -18,17 +17,14 @@
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:storybook/recommended",
     "prettier"
   ],
-  "plugins": ["react", "react-hooks", "@typescript-eslint"],
+  "plugins": ["react", "react-hooks"],
   "rules": {
     "react/prop-types": "off",
     "react/display-name": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "warn",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "no-console": "warn"
   },
   "env": {

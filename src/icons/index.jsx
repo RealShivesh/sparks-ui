@@ -1,25 +1,10 @@
 import React from 'react';
 
-export interface IconProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-  color?: string;
-  'aria-label'?: string;
-}
-
-function createIcon(
-  displayName: string,
-  path: React.ReactNode
-): React.FC<IconProps> {
-  const Icon: React.FC<IconProps> = ({
-    size = 20,
-    color = 'currentColor',
-    'aria-label': ariaLabel,
-    role,
-    ...props
-  }) => {
+function createIcon(displayName, path) {
+  function Icon({ size = 20, color = 'currentColor', 'aria-label': ariaLabel, role, ...props }) {
     const accessibilityProps = ariaLabel
       ? { role: role ?? 'img', 'aria-label': ariaLabel }
-      : { role: role ?? 'presentation', 'aria-hidden': true as const };
+      : { role: role ?? 'presentation', 'aria-hidden': true };
 
     return React.createElement(
       'svg',
@@ -31,15 +16,14 @@ function createIcon(
         fill: 'none',
         stroke: color,
         strokeWidth: 2,
-        strokeLinecap: 'round' as const,
-        strokeLinejoin: 'round' as const,
+        strokeLinecap: 'round',
+        strokeLinejoin: 'round',
         ...accessibilityProps,
         ...props,
       },
       path
     );
-  };
-
+  }
   Icon.displayName = displayName;
   return Icon;
 }
@@ -184,6 +168,4 @@ export const iconMap = {
   'external-link': ExternalLinkIcon,
   eye: EyeIcon,
   'eye-off': EyeOffIcon,
-} as const;
-
-export type IconName = keyof typeof iconMap;
+};

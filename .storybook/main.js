@@ -1,7 +1,5 @@
-import type { StorybookConfig } from '@storybook/react-vite';
-
-const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+const config = {
+  stories: ['../src/**/*.stories.@(js|jsx|mjs)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -14,9 +12,6 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag',
-  },
-  typescript: {
-    check: false,
   },
 };
 

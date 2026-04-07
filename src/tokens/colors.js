@@ -1,5 +1,4 @@
 export const colors = {
-  // Brand primitives
   brand: {
     50: '#eef2ff',
     100: '#e0e7ff',
@@ -13,8 +12,6 @@ export const colors = {
     900: '#312e81',
     950: '#1e1b4b',
   },
-
-  // Neutral
   neutral: {
     0: '#ffffff',
     50: '#f8fafc',
@@ -30,8 +27,6 @@ export const colors = {
     950: '#020617',
     1000: '#000000',
   },
-
-  // Semantic
   success: {
     50: '#f0fdf4',
     100: '#dcfce7',
@@ -44,7 +39,6 @@ export const colors = {
     800: '#166534',
     900: '#14532d',
   },
-
   warning: {
     50: '#fffbeb',
     100: '#fef3c7',
@@ -57,7 +51,6 @@ export const colors = {
     800: '#92400e',
     900: '#78350f',
   },
-
   danger: {
     50: '#fef2f2',
     100: '#fee2e2',
@@ -70,7 +63,6 @@ export const colors = {
     800: '#991b1b',
     900: '#7f1d1d',
   },
-
   info: {
     50: '#eff6ff',
     100: '#dbeafe',
@@ -83,7 +75,7 @@ export const colors = {
     800: '#1e40af',
     900: '#1e3a8a',
   },
-} as const;
+};
 
 export const lightPalette = {
   background: {
@@ -131,7 +123,7 @@ export const lightPalette = {
     subtle: colors.info[50],
     text: colors.info[700],
   },
-} as const;
+};
 
 export const darkPalette = {
   background: {
@@ -179,6 +171,4 @@ export const darkPalette = {
     subtle: '#0a1a2e',
     text: colors.info[400],
   },
-} as const;
-
-export type ColorPalette = typeof lightPalette;
+};

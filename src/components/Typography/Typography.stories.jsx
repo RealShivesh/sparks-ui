@@ -1,8 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Text } from './Text';
-import { Heading } from './Heading';
+import { Text } from './Text.jsx';
+import { Heading } from './Heading.jsx';
 
-const textMeta: Meta<typeof Text> = {
+export default {
   title: 'Components/Typography/Text',
   component: Text,
   parameters: { layout: 'padded' },
@@ -15,52 +14,23 @@ const textMeta: Meta<typeof Text> = {
   },
 };
 
-export default textMeta;
+export const Body = { args: { variant: 'body', children: 'The quick brown fox jumps over the lazy dog.' } };
+export const Caption = { args: { variant: 'caption', children: 'This is a caption with secondary styling.' } };
+export const Label = { args: { variant: 'label', children: 'Form Label' } };
+export const Code = { args: { variant: 'code', children: 'const answer = 42;' } };
 
-type TextStory = StoryObj<typeof Text>;
-// HeadingStory re-uses the Text meta file but renders Heading in render fn
-type HeadingStory = StoryObj<typeof Text>;
-
-export const Body: TextStory = {
-  args: {
-    variant: 'body',
-    children: 'The quick brown fox jumps over the lazy dog.',
-  },
-};
-
-export const Caption: TextStory = {
-  args: {
-    variant: 'caption',
-    children: 'This is a caption with secondary styling.',
-  },
-};
-
-export const Label: TextStory = {
-  args: {
-    variant: 'label',
-    children: 'Form Label',
-  },
-};
-
-export const Code: TextStory = {
-  args: {
-    variant: 'code',
-    children: 'const answer = 42;',
-  },
-};
-
-export const AllTextVariants: TextStory = {
+export const AllTextVariants = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       <Text variant="body">Body text — The quick brown fox jumps over the lazy dog.</Text>
       <Text variant="caption">Caption text — A supporting piece of information.</Text>
       <Text variant="label">Label text</Text>
-      <Text variant="code">const example = 'code variant';</Text>
+      <Text variant="code">{"const example = 'code variant';"}</Text>
     </div>
   ),
 };
 
-export const TextSizes: TextStory = {
+export const TextSizes = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
       <Text size="xs">Extra Small (xs)</Text>
@@ -72,7 +42,7 @@ export const TextSizes: TextStory = {
   ),
 };
 
-export const TextWeights: TextStory = {
+export const TextWeights = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
       <Text weight="normal">Normal weight</Text>
@@ -83,7 +53,7 @@ export const TextWeights: TextStory = {
   ),
 };
 
-export const HeadingDefault: HeadingStory = {
+export const HeadingDefault = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       <Heading level={1}>Heading Level 1</Heading>
@@ -97,18 +67,15 @@ export const HeadingDefault: HeadingStory = {
   name: 'All Headings',
 };
 
-export const TypographyScale: TextStory = {
+export const TypographyScale = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '640px' }}>
       <Heading level={1}>Display Heading</Heading>
       <Heading level={2}>Section Title</Heading>
       <Text variant="body">
-        This is body text that appears under a heading. It provides context and detail for the
-        content above. The quick brown fox jumps over the lazy dog.
+        This is body text that appears under a heading. It provides context and detail for the content above.
       </Text>
-      <Text variant="caption">
-        Caption: Supporting detail or metadata shown in a smaller, secondary style.
-      </Text>
+      <Text variant="caption">Caption: Supporting detail or metadata shown in a smaller, secondary style.</Text>
     </div>
   ),
 };
